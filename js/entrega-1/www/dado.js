@@ -1,36 +1,31 @@
 "use strict";
 
-/* no me sale :(
-
-
-
 function tirarDado() {
-  return Math.round(Math.random() * 6);
+  return Math.ceil(Math.random() * 6); //uso Math.ceil para que no me elija el 0.
 }
 
-function sumarValores(numeroTiradas) {
-  for (let i = 1; i <= numeroTiradas; i++) {
-    let resultado = tirarDado();
-    if ((i = 1)) {
-      return resultado;
+let numero; // es el número aleatorio que me va a salir cada vez (del 1 al 6)
+let suma = 0; // va a ser la suma acumulada de los numeros. P
+
+/* Para llegar a 50 puntos, en el caso más desfavorable(que siempre me salga un 1)
+debo tirar 50 veces */
+
+function jugar() {
+  for (let i = 1; i <= 50; i++) {
+    numero = tirarDado();
+    suma = suma + numero; //a cada numero que sale se le añade la suma anterior
+    if (suma >= 50) {
+      return (
+        numero,
+        console.log(
+          `¡Enhorabuena, ha salido un ${numero}!¡Has ganado con un total de ${suma} puntos !`
+        )
+      );
     } else {
-      return resultado + (resultado - 1);
+      console.log(
+        `tirada ${i}.Has sacado un ${numero} y obtenido un total de ${suma} puntos`
+      );
     }
   }
 }
-
-function darResultados() {
-  let resultado;
-  let suma = sumarValores();
-  let numeroTiradas;
-  if (suma < 50) {
-    console.log(`tirada ${jugar(i)}. Has obtenido un total 
-    de ${sumarValores(i)} puntos`);
-  } else {
-    console.log(
-      `¡Enhorabuena, ha salido un ${resultado}! 
-    ¡Has ganado con un total de ${suma} puntos` + "!"
-    );
-  }
-}
-darResultados();
+jugar();

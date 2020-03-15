@@ -4,7 +4,16 @@ const equipoMaria = [62, 34, 55];
 const equipoPaula = [35, 60, 59];
 const equipoRebeca = [40, 39, 63];
 
-//He intentado hacer la suma de cada equipo con una función con un bucle, pero no me sale;
+/*
+He intentado sumar con un bucle, pero no me sale
+let suma = 0;
+function sumar(equipo) {
+  for (let i = 0; i < 3; i++) {
+    suma = suma + equipo[i];
+    console.log(suma);
+  }
+}
+console.log(sumar(equipoMaria));*/
 
 function calcularMedia(equipo) {
   return (equipo[0] + equipo[1] + equipo[2]) / equipo.length;
