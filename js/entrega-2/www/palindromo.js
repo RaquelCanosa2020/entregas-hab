@@ -1,21 +1,22 @@
 "use strict";
 
-let frase = "holaoloh";
-const fraseArray = frase.split("");
-const filtered = fraseArray.filter(element => element !== " ");
+//Comparando el string con su "reverse":
 
-function PalindromeTwo() {
-  for (let i = 0; i < filtered.length; i++) {
-    if (filtered[i] === filtered[filtered.length - 1 - i]);
-    {
-      return true;
-    }
+let str = prompt("introduce una frase");
+
+function PalindromeTwo(frase) {
+  let fraseMinusc = frase.toLowerCase();
+  let fraseArray = fraseMinusc.split("");
+  let filtered = fraseArray.filter(element => element !== " ");
+  let reversed = [...filtered].reverse();
+
+  let filteredString = String(filtered);
+  let reversedCopy = String(reversed);
+
+  if (filteredString === reversedCopy) {
+    console.log(true);
+  } else {
+    console.log(false);
   }
-  return false;
 }
-
-if (filtered.every(PalindromeTwo())) {
-  console.log("es");
-} else {
-  console.log("no es");
-}
+PalindromeTwo(str);
