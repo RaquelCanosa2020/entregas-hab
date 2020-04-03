@@ -1,49 +1,65 @@
 "use strict";
 
-let N1 = 2;
-let N2 = 5;
-let operacion = "potencia";
+let N1 = parseInt(prompt("Introduce el primer número"));
+console.log(`N1 = ${N1}`);
 
-/* Operaciones posibles:
-"suma"
-"resta1" (N1-N2)
-"resta2" (N2-N1)
-"multiplicacion"
-"division1" (N1/N2)
-"division2" (N2/N1)
-"potencia" (N1 elevado a N2)
-*/
+let N2 = parseInt(prompt("Introduce el segundo número"));
+console.log(`N2 = ${N2}`);
 
-switch (operacion) {
-  case "suma":
-    console.log(N1 + N2);
+let operacion = prompt(`Introduce la operación. 
+Operaciones posibles: 
+suma, 
+resta1(resta N1 - N2), 
+resta2(resta N2 - N1), 
+multiplicacion, 
+division1(divide N1 / N2), 
+division2(divide N2 / N1), 
+potencia(N1 elevado a N2)`);
 
-    break;
-  case "resta1":
-    console.log(N1 - N2);
+console.log(operacion);
 
-    break;
-  case "resta2":
-    console.log(N2 - N1);
+function operate(a, b) {
+  let resultado;
+  switch (operacion) {
+    case "suma":
+      resultado = a + b;
 
-    break;
-  case "multiplicacion":
-    console.log(N1 * N2);
+      break;
 
-    break;
-  case "division1":
-    console.log(N1 / N2);
+    case "resta1":
+      resultado = a - b;
 
-    break;
-  case "division2":
-    console.log(N2 / N1);
+      break;
 
-    break;
-  case "potencia":
-    console.log(N1 ** N2);
+    case "resta2":
+      resultado = b - a;
 
-    break;
+      break;
 
-  default:
-    console.log("operación no permitida");
+    case "multiplicacion":
+      resultado = a * b;
+
+      break;
+
+    case "division1":
+      resultado = a / b;
+
+      break;
+
+    case "division2":
+      resultado = b / a;
+
+      break;
+
+    case "potencia":
+      resultado = a ** b;
+
+      break;
+
+    default:
+      resultado = "operación no permitida";
+  }
+  return resultado;
 }
+
+console.log(`resultado: ${operate(N1, N2)}`);
