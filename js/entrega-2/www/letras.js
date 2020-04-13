@@ -1,11 +1,33 @@
 "use strict";
 
+/*Dada la función LetterCount(str) toma el parámetro str que se está pasando y 
+devuelve la primera palabra de mayor longitud.
+Por ejemplo: Hoy es un día estupendo y fantástico.
+debe devolver fantástico porque es la primera palabra que más letras tiene.*/
+
 let frase = prompt("introduce una frase");
 
-function devolverPalabra(frase) {
-  let fraseArray = frase.split(" ");
+function quitarPuntuacion(miString) {
+  for (let i = 0; i < miString.length; i++) {
+    miString = miString.replace(",", "");
+    miString = miString.replace(";", "");
+    miString = miString.replace(".", "");
+    miString = miString.replace(":", "");
+    miString = miString.replace("¿", "");
+    miString = miString.replace("?", "");
+    miString = miString.replace("¡", "");
+    miString = miString.replace("!", "");
+  }
+
+  return miString;
+}
+
+function LetterCount(str) {
+  let fraseSinPuntuacion = quitarPuntuacion(str);
+  let fraseArray = fraseSinPuntuacion.split(" ");
   let resultado = fraseArray[0].length;
-  let posicion;
+
+  let posicion = 0;
   for (let i = 0; i < fraseArray.length; i++) {
     if (resultado >= fraseArray[i].length) {
       resultado;
@@ -23,4 +45,4 @@ function devolverPalabra(frase) {
   );
 }
 
-devolverPalabra(frase);
+LetterCount(frase);

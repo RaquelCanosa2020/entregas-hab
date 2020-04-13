@@ -4,7 +4,7 @@ function tirarDado() {
   return Math.ceil(Math.random() * 6); //uso Math.ceil para que no me elija el 0.
 }
 
-let numero; // es el número aleatorio que me va a salir cada vez (del 1 al 6)
+let numero = 0; // es el número aleatorio que me va a salir cada vez (del 1 al 6)
 let suma = 0; // va a ser la suma acumulada de los numeros. P
 
 /* Para llegar a 50 puntos, en el caso más desfavorable(que siempre me salga un 1)
@@ -12,6 +12,7 @@ debo tirar 50 veces */
 
 function jugar() {
   for (let i = 1; i <= 50; i++) {
+    confirm("tira el dado");
     numero = tirarDado();
     suma = suma + numero; //a cada numero que sale se le añade la suma anterior
     if (suma >= 50) {

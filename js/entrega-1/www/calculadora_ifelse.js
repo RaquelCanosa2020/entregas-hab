@@ -19,7 +19,7 @@ potencia(N1 elevado a N2)`);
 console.log(operacion);
 
 function operar(a, b) {
-  let result;
+  let result = 0;
   if (operacion === "suma") {
     result = a + b;
   } else if (operacion === "resta1") {
@@ -39,7 +39,5 @@ function operar(a, b) {
   }
   return result;
 }
-
-operar(N1, N2);
 
 console.log(`resultado: ${operar(N1, N2)}`);

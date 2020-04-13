@@ -19,7 +19,7 @@ potencia(N1 elevado a N2)`);
 console.log(operacion);
 
 function operate(a, b) {
-  let resultado;
+  let resultado = 0;
   switch (operacion) {
     case "suma":
       resultado = a + b;
