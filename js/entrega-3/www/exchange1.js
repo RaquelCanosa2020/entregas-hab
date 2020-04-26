@@ -5,7 +5,7 @@ https://api.exchangerate-api.com/v4/latest/EUR. D
 ado un valor en euros (EUR), convierte dicha cantidad a dólares (USD). 
 Por último convierte el resultado obtenido en dólares a yenes (JPY).*/
 
-//const moneda = parseInt(prompt(`introduce una cantidad en euros`));
+//const moneda = parseInt(prompt(`introduce una cantidad en  euros`));
 
 const currency = 25;
 

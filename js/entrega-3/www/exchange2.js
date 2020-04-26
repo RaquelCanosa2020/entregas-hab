@@ -9,7 +9,7 @@ const currency = parseInt(prompt(`introduce una cantidad en euros`));
 
 /*En "exchange1" obtendríamos los dos datos en la misma función, no sé si es suficiente así,
 pero según el enunciado entiendo que
-primero debo obtener los dólares, guardarlos en variable y después a partir
+primero debo obtener los dólares, guardarlos en variable y después a   partir
 de la misma los yenes*/
 
 async function getDollars(quantity) {

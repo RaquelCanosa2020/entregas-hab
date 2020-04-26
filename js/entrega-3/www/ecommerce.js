@@ -3,7 +3,7 @@
  el stock de la tienda. Tendremos también un usuario que añade cosas a su carrito,
  que es privado. Los artículos cuando los metemos al carrito los convertimos un tipo de
  dato que guarda las unidades del usuario de dicho artículo. La tienda es la
- encargada de imprimir un ticket por la consola.
+ encargada de imprimir un ticket por la consola  .
 */
 
 const itemNames = ["Camisa", "Pantalon", "Calcetines"];
