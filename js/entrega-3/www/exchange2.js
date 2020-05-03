@@ -19,6 +19,8 @@ async function getDollars(quantity) {
 
   const infoData = await requestInfo.json();
 
+  console.log(infoData);
+
   const rateUSD = infoData.rates.USD;
   const numberUSD = rateUSD * quantity;
 
@@ -28,6 +30,11 @@ async function getDollars(quantity) {
 getDollars(currency).then((valueUSD) => {
   console.log(`${currency} euros son ${valueUSD} dólares US`);
 });
+
+/* nota para mí: si aquí hago un retun en vez de c.l. me da otra promesa, pq
+está esperando a la promesa (primero siempre se ejecuta el código síncrono
+  y lo asíncrono va al final, va a "lista de espera". Para hacer eso tengo que 
+  usar async await de nuevo*/
 
 async function getYen() {
   const resultDollars = await getDollars(currency).then((valueUSD) => {
