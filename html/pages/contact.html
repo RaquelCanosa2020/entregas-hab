@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="copyright" content="Raquel Canosa" />
+    <title>Contacto</title>
+
+    <style>
+      * {
+        text-align: center;
+      }
+      html {
+        background-color: #e9e1cc;
+        @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+        font-family: "Source Sans Pro", sans-serif;
+      }
+
+      a {
+        color: blue;
+        font-size: 25px;
+      }
+      h1 {
+        font-size: 35px;
+      }
+
+      p,
+      legend {
+        font-size: 25px;
+      }
+
+      label {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--MENÚ-->
+    <nav>
+      <a href="#">CONTACTO (Estás aquí)</a>
+      <a href="../index.html">INICIO</a>
+    </nav>
+    <!--MENÚ-->
+
+    <main>
+      <!--INFO DE CONTACTO-->
+      <h1>
+        ¿Necesitas algo?
+      </h1>
+
+      <p>
+        Puedes contactarnos a nuestro
+        <a href="https://twitter.com/explore" target="_blank">Twitter</a>,
+        enviarnos un
+        <a
+          href="mailto:correo@correo.es?Subject=consultas%20juego"
+          target="_blank"
+          >correo electrónico</a
+        >
+        o rellenar el formulario 👇
+      </p>
+
+      <!--INFO DE CONTACTO-->
+
+      <!--FORMULARIO-->
+
+      <form>
+        <fieldset>
+          <legend>
+            Datos personales
+          </legend>
+          <br />
+
+          <label type="text" for="name">Nombre</label>
+          <input type="text" name="name" placeholder="tu nombre" />
+
+          <br /><br /><br />
+
+          <label type="text" for="surname">Apellido/s</label>
+          <input type="text" name="surname" placeholder="tu/s apellido/s" />
+
+          <br /><br /><br />
+
+          <label type="email" for="email">Correo electrónico</label>
+          <input type="email" name="email" placeholder="tu email" />
+        </fieldset>
+
+        <br /><br /><br />
+
+        <fieldset>
+          <legend>
+            ¿Qué necesitas?
+          </legend>
+          <br />
+
+          <label type="text" for="subject">Asunto del mensaje</label>
+          <input type="text" name="subject" placeholder="asunto" />
+
+          <br /><br /><br />
+
+          <label for="msg">Tu mensaje</label>
+          <textarea
+            id="msg"
+            rows="10"
+            cols="100
+          "
+          ></textarea>
+        </fieldset>
+
+        <input style="font-size: 20px;" type="button" value="Enviar" />
+      </form>
+
+      <!--FORMULARIO-->
+    </main>
+
+    <hr />
+
+    <!--FOOTER-->
+
+    <footer>
+      Raquel Canosa, copyright 2020
+    </footer>
+
+    <!--FOOTER-->
+  </body>
+</html>
