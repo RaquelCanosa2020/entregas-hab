@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  --font: "Raleway", sans-serif;
+  --clear: rgb(241, 235, 243);
+  --dark: rgb(87, 83, 83);
+  --orange: rgb(221, 185, 66);
+  --purple: rebeccapurple;
+}
+
+body {
+  background-color: var(--orange);
+  font-family: var(--font);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body > header {
+  margin: 2rem 1rem;
+}
+
+body > header h1 {
+  text-align: center;
+  color: var(--clear);
+  font-size: 2.2rem;
+}
+
+body > main > ul {
+  margin: 2rem 1rem 5rem 1rem;
+  list-style: none;
+}
+
+body > main > ul > li article {
+  margin: 1rem 2rem;
+  text-align: center;
+  background-color: var(--purple);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+body > main > ul > li article header {
+  background-color: var(--clear);
+  display: block;
+}
+
+body > main > ul > li article header h2 {
+  padding: 2rem 1rem;
+}
+
+body > main > ul > li article header figure img {
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+
+body > main > ul > li > article > header nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  text-decoration: none;
+  padding: 0 1rem 2rem 1rem;
+}
+
+body > main > ul > li > article > header > nav ul li a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 0.3rem;
+  font-size: 0;
+}
+
+body main ul li article header nav ul li a.facebook {
+  background-image: url("/img/Facebook.svg");
+}
+
+body main ul li article header nav ul li a.instagram {
+  background-image: url("/img/Instagram.svg");
+}
+
+body main ul li article header nav ul li a.twitter {
+  background-image: url("/img/Twitter.svg");
+}
+
+body main ul li article header nav ul li a.linkedin {
+  background-image: url("/img/Linkedin.svg");
+}
+
+body > main > ul li article section p {
+  font-size: 1rem;
+  text-align: left;
+  margin: 1rem;
+  color: var(--clear);
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 700px) {
+  body > header h1 {
+    font-size: 6rem;
+  }
+
+  body > main {
+    text-align: center;
+  }
+  body > main > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  body > main > ul > li {
+    display: block;
+    max-width: 50%;
+  }
+
+  body > main > ul > li:nth-child(2) {
+    order: 1;
+  }
+}
+
+@media (min-width: 1000px) {
+  body > header h1 {
+    font-size: 9rem;
+  }
+
+  body > main > ul li article header figure img {
+    max-width: 100%;
+  }
+
+  body > main > ul li {
+    display: block;
+    max-width: 30%;
+  }
+
+  body > main > ul {
+    max-width: 1200px;
+  }
+
+  body > main > ul > li:nth-child(2) {
+    order: 0;
+  }
+  body > main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  body > main > ul li article section p {
+  font-size: 1.3rem;
+}
