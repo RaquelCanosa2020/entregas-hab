@@ -1,0 +1,41 @@
+/*******EVENTOS ***/ 
+
+
+1º Seleccionar elemento que lo generará
+
+
+///Método tradicional/////:
+
+button.onclick = función que se ejecuta al clicar //otro:onmouseover
+
+input.onkeydown/onkeyup/onimput
+
+Hay muchos, ver mdn.
+
+
+///Método "moderno"/////:
+
+Permite añadir fácilmente varios eventos al elemento.
+
+1º Seleccionar elemento que lo generará
+2º creamos la función de respuesta (lo que quiero que ocurra)
+
+//button.addEventListener("acción que provoca el evento (comando)", función que ejecuta evento)
+
+Añadimos tantas líneas como acciones a realizar
+
+
+//button.removeEventListener("acción que provoca el evento (comando)", función que ejecuta evento)
+
+Así se cancela el evento.
+
+
+
+////////Información del evento///////¡¡¡¡¡¡¡¡¡¡¡¡SUPER IMPORTANTE!!!!!!!!!
+
+Pasando a la función el parámetro "event". Podemos obtener (pej, console.log) información diversa
+del evento (nos devuelve un objeto)
+
+event.target nos indica qué elemento lo generó.
+
+Ver los ejemplos día 30 de mayo.

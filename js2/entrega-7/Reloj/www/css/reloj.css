@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "WhiteRabbit";
+  src: url("/fonts/WhiteRabbit.woff2"), url("/fonts/WhiteRabbit.woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  max-width: 100%;
+  font-family: "WhiteRabbit", sans-serif;
+}
+
+body.morning {
+  background-color: violet;
+}
+
+body.evening {
+  background-color: teal;
+}
+
+body.night {
+  background-color: tomato;
+}
+
+body.alarm {
+  background-image: url("https://media.giphy.com/media/U6jsFIAwykuB2MlJGF/giphy.gif");
+  background-repeat: repeat;
+  background-position-y: 95%;
+  background-size: 100% 120%;
+  transition: 500ms;
+  transform: translateY(230px);
+}
+
+header {
+  background-color: rgb(92, 89, 89);
+  padding: 1.5rem;
+  text-align: center;
+  border: dotted 3px indigo;
+  font-size: 1.5rem;
+}
+
+header h1 {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 700px) {
+  body.alarm {
+    transition: 500ms;
+    transform: translateY(400px);
+  }
+  header {
+    column-width: 50vw;
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  header {
+    max-width: 500px;
+  }
+}
