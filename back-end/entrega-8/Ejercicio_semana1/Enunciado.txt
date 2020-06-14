@@ -1,0 +1,28 @@
+Ejercicio semanal:
+
+node todo.js Comprar pan //Añadiria "comprar pan" al principio de la lista de tareas
+node todo.js Ir al dentista --priority //Añadiria con prioridad alta
+node todo.js --list //Listaría todas las tareas
+node todo.js --done=1 //Marcaría la tarea 1 como hecha
+node todo.js --undone=1 //Desmarcaría la tarea 1 como hecha
+node todo.js --clean //Borraria las tareas ya hechas
+
+//Cada tarea debe guardar el texto de la tarea, el estado, la prioridad y fecha añadida
+//Cuando se listen debe mostrar toda esa información
+
+//La lista de tareas debe guardarse en un archivo .tasks.json en el directorio personal del usuario (os.homedir()).
+
+Modules:
+//minimist
+//fs-extra
+//date-fns
+
+Para nota:
+usar el módulo chalk para colorear las tareas, por ejemplo, las de alta prioridad en rojo
+
+Resultado al listar las tareas:
+
+Lista de tareas:
+
+Ir al dentista (pendiente, prioridad alta) - hace 2 días
+Comprar pan (hecha) - hace 4 días
