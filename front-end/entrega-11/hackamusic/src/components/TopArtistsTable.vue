@@ -7,9 +7,9 @@
     <input type="search" v-model="search" placeholder="Busca por nombre" />
 
     <div class="element">
-      <section v-for="(artist,index) in filtered" :key="artist.id ">
+      <section v-for="(artist) in filtered" :key="artist.id ">
         <figure>
-          <img :src="url+index" />
+          <img :src="url+Math.ceil(Math.random()*10)" />
         </figure>
         <ul>
           <li class="name">{{artist.name}}</li>
@@ -34,9 +34,10 @@ export default {
   data() {
     return {
       search: "",
-      url: "http://lorempixel.com/100/100/abstract/"
+      url: "http://lorempixel.com/200/200/abstract/"
     };
   },
+
   computed: {
     filtered() {
       if (!this.search) {
@@ -56,6 +57,7 @@ div {
   display: flex;
   flex-direction: column;
 }
+
 h1 {
   padding-bottom: 2.8rem;
   font-size: 3rem;
@@ -77,7 +79,7 @@ section {
   justify-content: left;
 }
 img {
-  width: 100px;
+  width: 200px;
   justify-content: left;
 }
 ul {
@@ -87,13 +89,13 @@ ul {
   justify-content: center;
 }
 li.name {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: red;
   font-weight: 600;
 }
 
 li {
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding-bottom: 0.8rem;
   text-align: left;
 }

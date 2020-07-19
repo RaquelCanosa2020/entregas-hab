@@ -69,6 +69,11 @@ section {
   background-color: rgb(195, 195, 236);
 }
 
+section:hover {
+  transform: scale(1.2);
+  background-color: cornsilk;
+}
+
 h2 {
   font-size: 2rem;
   color: red;

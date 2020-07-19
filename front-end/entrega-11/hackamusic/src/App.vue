@@ -28,6 +28,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: rgb(53, 46, 46);
+  background-image: url();
 }
 
 #title {

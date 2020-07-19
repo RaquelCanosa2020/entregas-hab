@@ -1,6 +1,6 @@
 <template>
   <!--Página de error-->
-  <div>
+  <div class="error">
     <vue-headful title="Error" />
     <h1>Esta ruta no existe</h1>
   </div>
@@ -12,4 +12,6 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
