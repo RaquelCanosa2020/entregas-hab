@@ -1,0 +1,9 @@
+Aplicación en la que incluir un diario de viajes.
+Los usuarios pueden incluir fecha, lugar, descripción, imagen de cada viaje.
+Se puede votar cada viaje.
+
+
+************************************************************************************
+
+
+

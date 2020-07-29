@@ -1,0 +1,69 @@
+Aplicación en la que incluir un diario de viajes.
+Los usuarios pueden incluir fecha, lugar, descripción, imagen de cada viaje.
+Se puede votar cada viaje.
+
+
+********************👣SISTEMA DE USUARIOS👣***************************************
+
+Tenemos los siguientes archivos:
+
+⏩.env: donde habíamos establecido como variables de entorno los datos de la BD (user, password..), incluimos en esta fase, una clave SECRET para el token y la sendgrid_key
+para enviar correos. Incluido en el gitignore.
+
+
+⏩ db.js: establece la conexión con la BD, tomando los valores de host, user, etc., de .env.NO CAMBIA.
+
+⏩ initDB.js: nos sirve para resetear la BD cuando hagamos pruebas. Borra las tablas actuales (🏮OJO🏮) e introduce nuevas con datos de prueba. Incluimos datos necesarios para el 
+	sistema de usuarios.
+
+⏩ server.js: es el archivo principal, en él cargamos los módulos necesarios, y las middlewares que vamos desarrollando en otros archivos y los asociamos a cada ruta (endpoint)
+	el middleware de error genérico  y de not found, así como la conexión al puerto. En esta fase vamos incluyendo los módulos de gestión de usuarios. Además, en los de contenido
+	que sólo pueden ser realizados por usuarios registrados, incluimos el middleware de isUser.
+
+⏩ controllers/diary: en este directorio incluimos las diferentes funciones a llamar y ejecutar en server.js, con las distintas acciones del diario (listas entradas, nueva entrada, etc.)
+	Introducimos cambios en muchos de ellos para el sistema de usuarios (pej, votos, incluimos qué usuario votó, que sólo pueda editar un viaje el usuario que lo creó, en votaciones cambiamos la ip por el usuario, etc).
+
+⏩ controllers/users: creamos los diferentes controllers para el sistema de usuarios (nuevo usuario, registro, login, etc).
+
+⏩ middlewares/entryExist.js: dado que muchos controllers necesitan comprobar si una determinada entrada (id), indicada por el usuario, existe, se realiza este middleware que será ejecutado. No cambia.
+	en muchos de ellos (para ahorrar código).
+
+⏩ middlewares/isUer.js: en el sistema de usuarios, muchos controllers necesitan comprobar si el usuario que realiza la operación es el autorizado (pej, el que creó la entrada o admin).
+
+⏩ middlewares/isAdmin.js: en el sistema de usuarios, sólo vamos a permitir que borre usuarios el administrador. Este middl comprueba que el que accede es admin.
+
+⏩ helpers.js: aquí habíamos incluido funciones auxiliares que son necesarias: formatear fechas, guardado y borrado de imágenes. Ahora incluimos: randomString(para que usuarios activen cuenta),
+
+	sendMail (para envío de correos a usuarios)
+
+
+***************************************************************************************.
+
+	🏮ALGUNAS COSAS MUY IMPORTANTES🏮
+
+⛔ No incluir directamente inputs que introduzca el usuario, ya que podría incluir algo que nos estropease la BD.
+
+	Para ello, incluimos en las consultas el símbolo ?, y como segundo parámetro de connection.query, pej: [`%${search}%`] 
+
+⛔ Nunca guardar contraseñas en la base de datos. Debemos encriptarlas primero, con bcrypt u otro sistema. Fundamental proteger sobre todo el token de usuario.
+
+
+🔵 cuando incluimos elementos en la base de datos, es útil el parámetro result.insertId, nos da el id del elemento que acabamos de incluir.
+
+
+*****************************************************************************************
+
+En todos los middl el proceso es similar:
+
+1. Llamamos a la conexión (connection = await getConnection)
+2. Sacamos los datos de los parámetros, desestructurando, de req.body = {dato1, dato2} (esto podemos hacerlo gracias al body-parser, si no
+el body saldría vacío) y de req.params(id).
+3. Cuando es una operación sobre un id concreto, comprobamos que existe (entryExists) 
+4. Ejecutamos query según operación const [] = await connection.query(A,B) A es el `sql de la consulta/acción` con ? en los datos que debe proporcionar usuario. 
+	B: [parámetros]
+5. Enviamos res.send({status:"ok",message:""});
+6. Cerramos la conexión connection.release()
+
+7. Validación. CUando el usuario hace clic, estamos haciendo una llamada get según el middl de validación (se pone en marcha esta función)
+
+SENGRID-KEY=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
